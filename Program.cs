@@ -54,12 +54,11 @@ namespace Homework2
             PrintArray(array);
         }
 
-        static void GetCountMostFreqChars(char[] array)
+        static int GetCountMostFreqChars(char[] array)
         {
             Console.WriteLine("\nThe initial array:");
             PrintArray(array);
             int maxCount = 0;
-            char character = array[0];
             for (int i = 0; i < array.Length; i++)
             {
                 int count = 0;
@@ -74,10 +73,9 @@ namespace Homework2
                 if (maxCount < count)
                 {
                     maxCount = count;
-                    character = array[i];
                 }
             }
-            Console.WriteLine("\nThe most common character in the array is '{0}' with quantity = {1}.", character, maxCount);
+            return maxCount;
         }
 
         static void Main(string[] args)
@@ -93,7 +91,7 @@ namespace Homework2
             /**********************************************************/
             /*Task3. Find the count of the most frequent characters.*/
             char[] array3 = {'a', 'c', 'f', 'd', 'f', 'd', 't', 't', 'f', 'a', 'g', 'f', 'A', 'g'};
-            GetCountMostFreqChars(array3);
+            Console.WriteLine("\nThe quantity of the most frequent char in the array = {0}.", GetCountMostFreqChars(array3));
          }
     }
 }
